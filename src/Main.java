@@ -127,16 +127,21 @@ public class Main extends JFrame implements ActionListener {
 					maximizacao = filhoAux;
 				}
 				// *************************************************************************************
-				// Verifica os filhos do filho atual, pra saber se vai perder na próxima jogada do usuário.
-				boolean perdedorAux = false;
-				for(int j=0; j<filhoAux.getFilhos().size(); j++){
-					if ((filhoAux.getFilhos().get(j).getCustoDeEscolha() == derrota)&&(filhoAux.getFilhos().get(j).getFilhos().size() == 0)){
-						perdedor = true;
-						perdedorAux = true;
-						filhoDerrotado = filhoAux;
-						break;
-					}
-				}
+		                // Verifica os filhos do filho atual, para saber se vai perder na próxima jogada do usuário.
+		                boolean perdedorAux = false;
+		                int nDerrotasAux = 0;
+		                for(int j=0; j<filhoAux.getFilhos().size(); j++){
+		                    if ((filhoAux.getFilhos().get(j).getCustoDeEscolha() == derrota)&&(filhoAux.getFilhos().get(j).getFilhos().size() == 0)){
+		                        perdedor = true;
+		                        perdedorAux = true;
+		                        nDerrotasAux++;
+		                    }
+		                }
+		                // Verifica o número de possíveis derrotas na próxima jogada.
+		                // Isso porque mesmo que seja derrotado ele irá escolher o caminho com o menor número de derrotas.
+		                if (nDerrotasAux < 2){
+		                    filhoDerrotado = filhoAux;
+		                }
 				// Verifica se esté é um filho que não haverá derrotas na próxima jogada.
 				if (!perdedorAux){
 					filhoSemDerrota = filhoAux;
