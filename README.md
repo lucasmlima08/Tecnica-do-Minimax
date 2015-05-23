@@ -1,4 +1,4 @@
-# Tecnica do Minimax
+# Técnica do Minimax
 
 * Jogo da velha com a técnica do Minimax em java.
 
