@@ -1,6 +1,7 @@
 # Técnica do Minimax
 
-* Jogo da velha com a técnica do Minimax em java.
+* Jogo da velha com a técnica do Minimax em java. Desenvolvido como uma atividade da universidade
+(Ciência da Computação - UEPB) para a disciplina de Inteligência Artificial.
 
 #imagens
 
